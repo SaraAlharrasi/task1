@@ -308,7 +308,7 @@ class Program
         {
             Console.WriteLine("ok you can have a loan!");
         }
-        */
+        
         // ----------------------------------------exercise 12-----------------------------------
            Console.WriteLine("Hello and welcome to our store ");
            Console.WriteLine("Please enter the region code (A, B, C)");
@@ -383,6 +383,38 @@ class Program
                        
                    }
                    break;
-           }
+                   }
+                   */
+               // ----------------------------------------exercise 13-----------------------------------
+               Console.WriteLine("please enter first length: ");
+               int lng1 = int.Parse(Console.ReadLine());
+               Console.WriteLine("please enter second length: ");
+               int lng2 = int.Parse(Console.ReadLine());
+               Console.WriteLine("please enter third length: ");
+               int lng3 = int.Parse(Console.ReadLine());
+
+               if ((lng1 + lng2) > lng3 && (lng2 + lng3) > lng1 && (lng1 + lng3) > lng2)
+               {
+                   Console.WriteLine("valid triangle");
+
+                   if (lng1 == lng2 && lng1 == lng3)
+                   {
+                       Console.WriteLine("Equilateral");
+                   }
+                   else if (lng1 == lng2 || lng1 == lng3 || lng2 == lng3)
+                   {
+                       Console.WriteLine("Isosceles");
+                   }
+                   else
+                   {
+                       Console.WriteLine("Scalene");
+                   }
+               }
+               else
+               {
+                   Console.WriteLine("invalid triangle");
+               }
+               
+                    
     }
 }
