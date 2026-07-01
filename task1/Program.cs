@@ -155,7 +155,7 @@ class Program
                    {
                        Console.WriteLine("unvalid entry");
                    }
-                   */
+                   
                
         // ----------------------------------------exercise 7--------------------------------
            
@@ -185,8 +185,25 @@ class Program
                         Console.WriteLine("unvalid entry");
                     }
                     
-        
+        */
         // ----------------------------------------exercise 8--------------------------------
-        
+                    Console.WriteLine("Please enter your total bill mount: ");
+                    double bill = double.Parse(Console.ReadLine());
+                    Console.WriteLine("are you a loyality member? (true/ false) ");
+                    bool isMember = bool.Parse(Console.ReadLine());
+
+                    if (bill > 20 && isMember== true )
+                    {
+                        Console.WriteLine("your bill is: " + bill);
+                        Console.WriteLine("discount 15%");
+                        Console.WriteLine("Final Price: " +  bill * 0.85);
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("discount does not apply");
+                        Console.WriteLine("Final Price: " +  bill);
+                    }
+                        
     }
 }
