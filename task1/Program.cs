@@ -279,7 +279,7 @@ class Program
                             break;
 
                     }
-                     */
+                     
         // ----------------------------------------exercise 11-----------------------------------
         
         Console.WriteLine("Welcome to the bank!");
@@ -308,9 +308,81 @@ class Program
         {
             Console.WriteLine("ok you can have a loan!");
         }
-        
-        
+        */
+        // ----------------------------------------exercise 12-----------------------------------
+           Console.WriteLine("Hello and welcome to our store ");
+           Console.WriteLine("Please enter the region code (A, B, C)");
+           string regionCode = (Console.ReadLine());
+           Console.WriteLine("Please enter the package weight in Kg");
+           double PackageWheight= double.Parse(Console.ReadLine());
 
+           double AbaseCoast = 1.000;
+           double BbaseCoast = 3.000;
+           double CbaseCoast = 7.000;
+           
 
+           switch (regionCode)
+           {
+               case "A": Console.WriteLine("Region : Local");
+                   
+                   if (PackageWheight > 5 && PackageWheight < 10)
+                   {
+                       Console.WriteLine("cost before extra charge: "+ AbaseCoast + " OMR");
+                       Console.WriteLine("cost after   : " + (PackageWheight + 2) + " OMR");
+                   }
+                   else if (PackageWheight > 10 )
+                   {
+                       Console.WriteLine("cost before extra charge: " + AbaseCoast  + " OMR");
+                       Console.WriteLine("cost after   : " + (PackageWheight + 5 ) + " OMR");
+                   }
+                   else
+                   {
+                       Console.WriteLine("No extra charge !");
+                       Console.WriteLine("cost  : " + (AbaseCoast) + " OMR");
+                       
+                   }
+                   break;
+               
+               
+               case "B": Console.WriteLine("Region : National");
+                   
+                   if (PackageWheight > 5 && PackageWheight < 10)
+                   {
+                       Console.WriteLine("cost before extra charge: "+ BbaseCoast + " OMR");
+                       Console.WriteLine("cost after   : " + (PackageWheight + 2) + " OMR");
+                   }
+                   else if (PackageWheight > 10 )
+                   {
+                       Console.WriteLine("cost before extra charge: " + BbaseCoast  + " OMR");
+                       Console.WriteLine("cost after   : " + (PackageWheight + 5 ) + " OMR");
+                   }
+                   else
+                   {
+                       Console.WriteLine("No extra charge !");
+                       Console.WriteLine("cost  : " + (BbaseCoast) + " OMR");
+                       
+                   }
+                   break;
+               
+               case "C": Console.WriteLine("Region : International");
+                   
+                   if (PackageWheight > 5 && PackageWheight < 10)
+                   {
+                       Console.WriteLine("cost before extra charge: "+ CbaseCoast + " OMR");
+                       Console.WriteLine("cost after   : " + (PackageWheight + 2) + " OMR");
+                   }
+                   else if (PackageWheight > 10 )
+                   {
+                       Console.WriteLine("cost before extra charge: " + CbaseCoast  + " OMR");
+                       Console.WriteLine("cost after   : " + (PackageWheight + 5 ) + " OMR");
+                   }
+                   else
+                   {
+                       Console.WriteLine("No extra charge !");
+                       Console.WriteLine("cost  : " + (CbaseCoast) + " OMR");
+                       
+                   }
+                   break;
+           }
     }
 }
