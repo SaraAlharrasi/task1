@@ -205,7 +205,7 @@ class Program
                         Console.WriteLine("Final Price: " +  bill);
                     }
                         
-               */          
+                       
         // ----------------------------------------exercise 9--------------------------------
         
                 Console.WriteLine("plese enter the day number: ");
@@ -231,5 +231,55 @@ class Program
                     default: Console.WriteLine("Invalid day number"); 
                         break;
                 }
+                 */ 
+        // ----------------------------------------exercise 10--------------------------------
+                    Console.WriteLine("Please enter the first number: ");
+                    int firstNumber = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Please enter the second number: ");
+                    int secondNumber = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Please choose your desired operation (+, - , *, / %) ");
+                    string operation = Console.ReadLine();
+
+                    switch (operation)
+                    {
+                        case "+":
+                            Console.WriteLine("the answer is : " + firstNumber + secondNumber);
+                            break;
+
+                        case "*":
+                            Console.WriteLine("the answer is : " + firstNumber * secondNumber);
+                            break;
+                        case "-":
+                            Console.WriteLine("the answer is : " + (firstNumber - secondNumber));
+                            break;
+                        case "/":
+                            if (secondNumber == 0)
+                            {
+                                Console.WriteLine("Cannot devide by zero");
+                            }
+                            else
+                            {
+                                Console.WriteLine("the answer is : " + firstNumber * secondNumber);
+                            }
+
+                            break;
+                        case "%":
+                            if (secondNumber == 0)
+                            {
+                                Console.WriteLine("Cannot devide by zero");
+                            }
+                            else
+                            {
+                                Console.WriteLine("the answer is : " + firstNumber * secondNumber);
+                            }
+
+                            break;
+                        default:
+                            Console.WriteLine("Invalid operation");
+                            break;
+
+                    }
+
+
     }
 }
