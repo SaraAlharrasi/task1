@@ -231,7 +231,7 @@ class Program
                     default: Console.WriteLine("Invalid day number"); 
                         break;
                 }
-                 */ 
+                 
         // ----------------------------------------exercise 10--------------------------------
                     Console.WriteLine("Please enter the first number: ");
                     int firstNumber = int.Parse(Console.ReadLine());
@@ -279,6 +279,37 @@ class Program
                             break;
 
                     }
+                     */
+        // ----------------------------------------exercise 11-----------------------------------
+        
+        Console.WriteLine("Welcome to the bank!");
+        Console.WriteLine("please answer these three questions");
+        Console.WriteLine("How old are you?");
+        int LoanAge = int.Parse(Console.ReadLine());
+        Console.WriteLine("how much is your monthly income? ");
+        int MonthlyIncome = int.Parse(Console.ReadLine());
+        Console.WriteLine("Do you have an existing loan? (true/ false)");
+        bool ExistingLoan = bool.Parse(Console.ReadLine());
+
+
+        if (LoanAge < 21 || LoanAge > 60) 
+        {
+            Console.WriteLine("sorry age out of range!");
+        }
+        if (ExistingLoan == true)
+        {
+            Console.WriteLine("sorry! you already have a loan");
+        }
+        if(MonthlyIncome < 400)
+        {
+            Console.WriteLine("sorry income too low");
+        }
+        if (LoanAge >= 21 && LoanAge <= 60 && MonthlyIncome >= 400 && ExistingLoan == false)
+        {
+            Console.WriteLine("ok you can have a loan!");
+        }
+        
+        
 
 
     }
