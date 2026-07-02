@@ -125,7 +125,7 @@ class Program
             Console.WriteLine("You can not divide by zero ");
         }
         
-    */
+    
         /////////////////////// Task 7 ////////////////////////////////////////
 
         bool menue = true;
@@ -162,6 +162,27 @@ class Program
             }
             
         }
+*/
+        
+        
+        /////////////////////// Task 8 ////////////////////////////////////////
+
+
+
+
+        Console.WriteLine("please Enter a positive whole number: ");
+        int Num = int.Parse(Console.ReadLine());
+        int NumSum = 0;
+
+        for (int i = 1; i <= Num ; i++)
+        {
+            if (i % 2 == 0)
+            {
+                NumSum += i;
+            }
+        }
+
+        Console.WriteLine("the final sum is : " + NumSum);
 
 
         
