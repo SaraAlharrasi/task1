@@ -15,7 +15,7 @@ class Program
             Console.WriteLine(num);
         }
         Console.WriteLine("liftoff ");
-        */
+        
         
         
         
@@ -32,5 +32,22 @@ class Program
             sum += i;
         }
         Console.WriteLine("final sum is : " + sum);
+        
+        */
+        
+        
+        
+        /////////////////////// Task 3 ////////////////////////////////////////
+        
+        
+        
+        Console.WriteLine("Enter a number: ");
+        int number = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= number; i++)
+        {
+            Console.WriteLine( i + "x" + number + " = " + i*number);
+            
+        }
     }
 }
