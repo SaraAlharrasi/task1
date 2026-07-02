@@ -74,7 +74,7 @@ class Program
            }
            }
 
- */
+ 
         /////////////////////// Task 5 ////////////////////////////////////////
 
            int counter = 0;
@@ -101,6 +101,34 @@ class Program
            
            Console.WriteLine("It took you " + counter + " guesses");
 
+*/
+        /////////////////////// Task 6 ////////////////////////////////////////
+
+        try
+        {
+            Console.WriteLine("please enter the first number: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("please enter the second number: ");
+            int num2 = int.Parse(Console.ReadLine());
+            
+            int divisionSum = num1 / num2;
+            
+            Console.WriteLine("The sum is : "+ divisionSum);
+
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("invalid input");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("You can not divide by zero ");
+        }
+        
+        
+        
+        
+        
 
 
     }
