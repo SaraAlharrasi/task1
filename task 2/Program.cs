@@ -33,7 +33,7 @@ class Program
         }
         Console.WriteLine("final sum is : " + sum);
         
-        */
+        
         
         
         
@@ -49,5 +49,35 @@ class Program
             Console.WriteLine( i + "x" + number + " = " + i*number);
             
         }
+        
+        */
+        
+        
+        
+        /////////////////////// Task 4 ////////////////////////////////////////
+
+        
+        while(true)
+        {
+            string password = "Spark2026";
+           Console.WriteLine("Please enter password: "); 
+           string passwordInput = Console.ReadLine();
+
+           if (passwordInput != password)
+           {
+               Console.WriteLine("invalid password");
+           }
+           else
+           {
+               Console.WriteLine("Correct Password!");
+               break;
+           }
+
+
+
+
+
+        }
+        
     }
 }
