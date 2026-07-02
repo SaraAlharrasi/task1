@@ -101,7 +101,7 @@ class Program
            
            Console.WriteLine("It took you " + counter + " guesses");
 
-*/
+
         /////////////////////// Task 6 ////////////////////////////////////////
 
         try
@@ -125,11 +125,46 @@ class Program
             Console.WriteLine("You can not divide by zero ");
         }
         
-        
-        
-        
-        
+    */
+        /////////////////////// Task 7 ////////////////////////////////////////
+
+        bool menue = true;
+        while (menue)
+        {
+            Console.WriteLine("Welcome to your favourite restaurant!");
+            Console.WriteLine("Please choose a number between 1 and 3");
+            Console.WriteLine("1: Say Hello");
+            Console.WriteLine("2: good morning");
+            Console.WriteLine("3: exit");
+            try
+            {
+                int choice = int.Parse(Console.ReadLine());
+                
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("Hello! hope you enjoy your time here!");
+                        break;
+                    case 2: Console.WriteLine("Good Morning! Enjoy your breakFast!");
+                        break;
+                    case 3: Console.WriteLine("Have a nice day!");
+                        menue = false;
+                        break;
+                    default: Console.WriteLine("Please pick a number between 1 and 3!");
+                        break;
+                }
+
+               
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("invalid input");
+            }
+            
+        }
 
 
+        
+        
     }
 }
