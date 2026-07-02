@@ -50,7 +50,7 @@ class Program
             
         }
         
-        */
+       
         
         
         
@@ -72,12 +72,36 @@ class Program
                Console.WriteLine("Correct Password!");
                break;
            }
+           }
+
+ */
+        /////////////////////// Task 5 ////////////////////////////////////////
+
+           int counter = 0;
+
+           do
+           {
+
+               int secretNumber = 7;
+               Console.WriteLine("Enter your guess: ");
+               int guess = int.Parse(Console.ReadLine());
+
+               if (guess != secretNumber)
+               {
+                   Console.WriteLine("Wrong guess! try again");
+                   counter++;
+               }
+               else
+               {
+                   Console.WriteLine("You got it!");
+                   break;
+               }
+
+           } while (true);
+           
+           Console.WriteLine("It took you " + counter + " guesses");
 
 
 
-
-
-        }
-        
     }
 }
