@@ -6,7 +6,7 @@ class Program
     {
         /*
         /////////////////////// Task 1 ////////////////////////////////////////
-        
+
         Console.WriteLine("please enter a starting number: ");
         int num = int.Parse(Console.ReadLine());
 
@@ -15,14 +15,14 @@ class Program
             Console.WriteLine(num);
         }
         Console.WriteLine("liftoff ");
-        
-        
-        
-        
-        
+
+
+
+
+
         /////////////////////// Task 2 ////////////////////////////////////////
-        
-        
+
+
         Console.WriteLine("please enter a positive whole number: ");
         int N = int.Parse(Console.ReadLine());
         int sum = 0;
@@ -32,35 +32,35 @@ class Program
             sum += i;
         }
         Console.WriteLine("final sum is : " + sum);
-        
-        
-        
-        
-        
+
+
+
+
+
         /////////////////////// Task 3 ////////////////////////////////////////
-        
-        
-        
+
+
+
         Console.WriteLine("Enter a number: ");
         int number = int.Parse(Console.ReadLine());
 
         for (int i = 1; i <= number; i++)
         {
             Console.WriteLine( i + "x" + number + " = " + i*number);
-            
+
         }
-        
-       
-        
-        
-        
+
+
+
+
+
         /////////////////////// Task 4 ////////////////////////////////////////
 
-        
+
         while(true)
         {
             string password = "Spark2026";
-           Console.WriteLine("Please enter password: "); 
+           Console.WriteLine("Please enter password: ");
            string passwordInput = Console.ReadLine();
 
            if (passwordInput != password)
@@ -74,7 +74,7 @@ class Program
            }
            }
 
- 
+
         /////////////////////// Task 5 ////////////////////////////////////////
 
            int counter = 0;
@@ -98,7 +98,7 @@ class Program
                }
 
            } while (true);
-           
+
            Console.WriteLine("It took you " + counter + " guesses");
 
 
@@ -110,9 +110,9 @@ class Program
             int num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("please enter the second number: ");
             int num2 = int.Parse(Console.ReadLine());
-            
+
             int divisionSum = num1 / num2;
-            
+
             Console.WriteLine("The sum is : "+ divisionSum);
 
         }
@@ -124,8 +124,8 @@ class Program
         {
             Console.WriteLine("You can not divide by zero ");
         }
-        
-    
+
+
         /////////////////////// Task 7 ////////////////////////////////////////
 
         bool menue = true;
@@ -139,7 +139,7 @@ class Program
             try
             {
                 int choice = int.Parse(Console.ReadLine());
-                
+
                 switch (choice)
                 {
                     case 1:
@@ -154,17 +154,17 @@ class Program
                         break;
                 }
 
-               
+
             }
             catch (FormatException)
             {
                 Console.WriteLine("invalid input");
             }
-            
+
         }
-*/
-        
-        
+
+
+
         /////////////////////// Task 8 ////////////////////////////////////////
 
 
@@ -184,8 +184,49 @@ class Program
 
         Console.WriteLine("the final sum is : " + NumSum);
 
+        */
+        /////////////////////// Task 9 ////////////////////////////////////////
 
+        int sum = 0;
+        int WholeNumber = 0;
+        bool IsValid = false; 
+        do
+        {
+            try
+            {
+                Console.WriteLine("please enter a positive whole number: ");
+                WholeNumber = int.Parse(Console.ReadLine());
+
+                if (WholeNumber <= 0)
+                {
+                    Console.WriteLine("invalid number");
+                }
+                else if (WholeNumber % 1 != 0)
+                {
+                    Console.WriteLine("invalid number");
+                }
+                else
+                {
+                    IsValid = true;
+                }
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("invalid input");
+            }
+
+        } while (!IsValid);
         
-        
+        for (int i = 1; i <= WholeNumber; i++) 
+        {
+                sum += i;
+        }
+
+        Console.WriteLine("The sum of the numbers is : " + sum);
+
+
+
+
     }
 }
