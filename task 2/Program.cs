@@ -184,7 +184,7 @@ class Program
 
         Console.WriteLine("the final sum is : " + NumSum);
 
-        */
+        
         /////////////////////// Task 9 ////////////////////////////////////////
 
         int sum = 0;
@@ -225,7 +225,117 @@ class Program
 
         Console.WriteLine("The sum of the numbers is : " + sum);
 
+*/
+        
+        ///////////////////////////////////Task 10 ///////////////////////////////////////////
+        
+        
+        Console.WriteLine("Welcome to the bank !");
+        int passwordInput = 0;
+        int balance = 100;
+        int password = 1234;
+        bool access = true;
+        
+        
+            for (int i = 1; i <= 3 && passwordInput != password; i++)
+            {
+                try
+                {
+                    Console.WriteLine("Please enter your password:");
+                    passwordInput = int.Parse(Console.ReadLine());
 
+
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("invalid input");
+                }
+            }
+
+            if (passwordInput != password)
+            {
+                Console.WriteLine("card blocked");
+            }
+
+            else if (passwordInput == password)
+            {
+                while (access)
+                {
+                    Console.WriteLine("what would you like to do?");
+                    Console.WriteLine("1: Deposite");
+                    Console.WriteLine("2: Whithdraw");
+                    Console.WriteLine("3: check balance");
+                    Console.WriteLine("4: Exite");
+                    int choice = int.Parse(Console.ReadLine());
+
+                    switch (choice)
+                    {
+                        case 1:
+                            try
+                            {
+                                Console.WriteLine("Enter deposite amount: ");
+                                int depositeAmount = int.Parse(Console.ReadLine());
+                                
+                                if (choice <= 0 && depositeAmount <= 0)
+                                {
+                                    Console.WriteLine("invalid input");
+                                }
+                                else
+                                {
+                                    balance += depositeAmount;
+                                    Console.WriteLine("Available balance is :  " + balance + " OMR");
+                                     
+                                }
+
+
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("invalid input");
+                            }
+
+                            break;
+
+                        case 2:
+                            Console.WriteLine("Enter withrawel amount: ");
+                            int withrawelAmount = int.Parse(Console.ReadLine());
+                            try
+                            {
+                                if (choice <= 0 && withrawelAmount <= 0)
+                                {
+                                    Console.WriteLine("invalid input");
+                                }
+                                else if (choice > balance)
+                                {
+                                    Console.WriteLine("Non-sufficient balance");
+                                }
+                                else
+                                {
+                                    balance -= withrawelAmount;
+                                    Console.WriteLine("Available balance is: " + balance + " OMR");
+                                }
+
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("invalid input");
+                            }
+
+                            break;
+                        case 3:
+                            Console.WriteLine("your current balance is : 100 OMR");
+                            break;
+                        case 4:
+                            Console.WriteLine("Have a nice day!");
+                            access = false;
+                            break;
+                    }
+
+                    {
+
+                    }
+                }
+            }
 
 
     }
