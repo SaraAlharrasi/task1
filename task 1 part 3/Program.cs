@@ -13,8 +13,7 @@ class Program
         
         int subtraction = Math.Abs(secondNumber - firstNumber);
         Console.WriteLine("The subtraction result is: " + subtraction);
-        */
-        
+       
         
         ///////////////////////task 2 ///////////////////////////
         
@@ -27,7 +26,16 @@ class Program
         double pow = Math.Pow(number, 2);
         Console.WriteLine("The square  of " + number + " = " + pow);
         
+        */
+        ///////////////////////task 3 ///////////////////////////
         
-
+        Console.WriteLine("Please enter your name: ");
+        string name = Console.ReadLine();
+        
+        Console.WriteLine("Name in upper case: "+ (name.ToUpper()));
+        Console.WriteLine("Name in lower case: "+ (name.ToLower()));
+        Console.WriteLine("The number of characters in your name is:  "+ (name.Length));
+        
+        
     }
 }
