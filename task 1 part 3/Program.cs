@@ -67,7 +67,7 @@ class Program
         {
             Console.WriteLine("You failed!");
         }
-        */
+        
         ///////////////////////task 6 ///////////////////////////
         
         Console.WriteLine("please enter a password: ");
@@ -83,6 +83,24 @@ class Program
         {
             Console.WriteLine("weak password");
         }
+        */
+        ///////////////////////task 7 ///////////////////////////
+        
+        Console.WriteLine("Please enter your name: ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Please enter your name again: ");
+        string nameAgain = Console.ReadLine();
+
+        if (name.ToLower().Trim() == nameAgain.ToLower().Trim())
+        {
+            Console.WriteLine("Match!");
+        }
+        else
+        {
+            Console.WriteLine("No Match");
+        }
+        
+        
         
         
     }
