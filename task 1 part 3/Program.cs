@@ -48,7 +48,7 @@ class Program
         
         Console.WriteLine("Trial ends in : " + Date);
         
-         */
+         
         ///////////////////////task 5 ///////////////////////////
         
         Console.WriteLine("please enter your raw exam score: ");
@@ -67,5 +67,23 @@ class Program
         {
             Console.WriteLine("You failed!");
         }
+        */
+        ///////////////////////task 6 ///////////////////////////
+        
+        Console.WriteLine("please enter a password: ");
+        string password = Console.ReadLine();
+        bool IsLongEnough = password.Length > 8;
+        bool ContainsPassword = password.ToLower().Contains("password");
+
+        if (IsLongEnough && !ContainsPassword)
+        {
+            Console.WriteLine("strong password");
+        }
+        else
+        {
+            Console.WriteLine("weak password");
+        }
+        
+        
     }
 }
