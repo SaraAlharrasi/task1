@@ -83,7 +83,7 @@ class Program
         {
             Console.WriteLine("weak password");
         }
-        */
+        
         ///////////////////////task 7 ///////////////////////////
         
         Console.WriteLine("Please enter your name: ");
@@ -99,8 +99,26 @@ class Program
         {
             Console.WriteLine("No Match");
         }
-        
-        
+        */
+        ///////////////////////task 8 ///////////////////////////
+
+        Console.WriteLine("Please enter your membership start date  like this format (2026-01-10): ");
+        string MembershipStartDate = Console.ReadLine();
+
+        Console.WriteLine("Please enter the number of valid membership days: ");
+        int validDays = int.Parse(Console.ReadLine());
+
+        DateTime startDate = DateTime.Parse(MembershipStartDate);
+        DateTime expiryDate = startDate.AddDays(validDays);
+
+        if (expiryDate >= DateTime.Today)
+        {
+            Console.WriteLine("Active - your membership expires on " + expiryDate);
+        }
+        else
+        {
+            Console.WriteLine("Expired - your membership expired on " + expiryDate);
+        }                                                                                    
         
         
     }
