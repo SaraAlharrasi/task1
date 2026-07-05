@@ -384,7 +384,7 @@ class Program
                    }
                    break;
                    }
-                   */
+                
                // ----------------------------------------exercise 13-----------------------------------
                Console.WriteLine("please enter first length: ");
                int lng1 = int.Parse(Console.ReadLine());
@@ -414,7 +414,65 @@ class Program
                {
                    Console.WriteLine("invalid triangle");
                }
+               */
                
-                    
+               // ----------------------------------------exercise 14 -----------------------------------
+               
+               Console.WriteLine("Single item check out ");
+               Console.WriteLine("please enter product code:");
+               Console.WriteLine("1: Headphones");
+               Console.WriteLine("2: Keyboard");
+               Console.WriteLine("3: Mouse");
+               int productCode = int.Parse(Console.ReadLine());
+               Console.WriteLine("enter quantity of product");
+               int quantity = int.Parse(Console.ReadLine());
+               Console.WriteLine("do you have discount code? (yes/no)");
+               string discountCode = Console.ReadLine();
+               double headphonecost = 8.500;
+               double keyboardcost = 12.00;
+               double mousecost = 5.00;
+               double Subtotal = 0;
+               double tax = 0;
+               double discountAmount = 0;
+               double finalTotal = 0;
+
+               switch (productCode)
+               {
+                   case 1:
+                       Console.WriteLine("Your product cost : " + headphonecost);
+                       Subtotal = headphonecost * quantity;
+                       break;
+                   case 2:
+                       Console.WriteLine("Your product cost : " + keyboardcost);
+                       Subtotal = keyboardcost * quantity;
+                       break;
+                   case 3:
+                       Console.WriteLine("Your product cost : " + mousecost);
+                       Subtotal = mousecost * quantity;
+                       break;
+                   default:
+                       Console.WriteLine("Invalid product code");
+                       break;
+               }
+
+               if (productCode == 1 || productCode == 2 || productCode == 3)
+               {
+                   if (discountCode == "yes" && Subtotal > 20)
+                   {
+                       discountAmount = Subtotal * 0.10;
+                   }
+
+                   double afterDiscount = Subtotal - discountAmount;
+                   tax = afterDiscount * 0.05;
+                   finalTotal = afterDiscount + tax;
+
+                   Console.WriteLine("Subtotal : " + Subtotal);
+                   Console.WriteLine("Discount : " + discountAmount);
+                   Console.WriteLine("Tax : " + tax);
+                   Console.WriteLine("Final total : " + finalTotal);
+               }
+               
+               
+              
     }
 }
