@@ -36,7 +36,7 @@ class Program
         Console.WriteLine("Name in lower case: "+ (name.ToLower()));
         Console.WriteLine("The number of characters in your name is:  "+ (name.Length));
         
-         */
+        
         ///////////////////////task 4 ///////////////////////////
         
         Console.WriteLine("Please enter the number of days of a free trial: ");
@@ -47,9 +47,25 @@ class Program
         string Date = trialEnds.ToString("yyyy-MM-dd");
         
         Console.WriteLine("Trial ends in : " + Date);
+        
+         */
+        ///////////////////////task 5 ///////////////////////////
+        
+        Console.WriteLine("please enter your raw exam score: ");
+        double rawScore = double.Parse(Console.ReadLine());
 
-        
-        
-        
+        if (Math.Round(rawScore, 0) < 0 || Math.Round(rawScore, 0) > 100)
+        {
+            Console.WriteLine("invalid input!");
+        }
+        else if (Math.Round(rawScore, 0) >= 60)
+        {
+            Console.WriteLine("Your exam score is : " + Math.Round(rawScore, 0) + " You passed! ");
+            
+        }
+        else 
+        {
+            Console.WriteLine("You failed!");
+        }
     }
 }
