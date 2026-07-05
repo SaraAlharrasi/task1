@@ -26,7 +26,7 @@ class Program
         double pow = Math.Pow(number, 2);
         Console.WriteLine("The square  of " + number + " = " + pow);
         
-        */
+       
         ///////////////////////task 3 ///////////////////////////
         
         Console.WriteLine("Please enter your name: ");
@@ -35,6 +35,20 @@ class Program
         Console.WriteLine("Name in upper case: "+ (name.ToUpper()));
         Console.WriteLine("Name in lower case: "+ (name.ToLower()));
         Console.WriteLine("The number of characters in your name is:  "+ (name.Length));
+        
+         */
+        ///////////////////////task 4 ///////////////////////////
+        
+        Console.WriteLine("Please enter the number of days of a free trial: ");
+        int freeTrial = int.Parse(Console.ReadLine());
+
+        DateTime today = DateTime.Today;
+        DateTime trialEnds = today.AddDays(freeTrial);
+        string Date = trialEnds.ToString("yyyy-MM-dd");
+        
+        Console.WriteLine("Trial ends in : " + Date);
+
+        
         
         
     }
