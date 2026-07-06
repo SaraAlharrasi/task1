@@ -120,6 +120,18 @@ class Program
             Console.WriteLine("Expired - your membership expired on " + expiryDate);
         }                                                                                    
         
+        ///////////////////////task 9 ///////////////////////////
+        
+        
+        Console.WriteLine("please enter a decimal number: ");
+        double decimalNumber = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("The number rounded to the nearest whole number is: "+ Math.Round(decimalNumber));
+        Console.WriteLine("The number always rounded up is : "+  Math.Ceiling(decimalNumber));
+        Console.WriteLine("The number always rounded down is : "+  Math.Floor(decimalNumber));
+        
+        
+        
         
     }
 }
