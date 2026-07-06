@@ -151,10 +151,10 @@ class Program
         {
             Console.WriteLine("The word /" +word +"/ first appear in " + firstIndex);
             Console.WriteLine("The word /" +word +"/ last appear in " + lastIndex);
-             */
+             
         
         
-        ////////////////////////////////////////////task 10 /////////////////////////////
+        ////////////////////////////////////////////task 11 /////////////////////////////
         
        
          int randomNumber = new Random().Next(1000, 10000);
@@ -186,8 +186,23 @@ class Program
          {
              Console.WriteLine("verification failed");
          }
+*/
+        ////////////////////////////////////////////task 12 /////////////////////////////
+        
+        Console.WriteLine("Enter your date of birth (e.g. 2000-01-25)");
+        string dateOfBirth = Console.ReadLine();
+        
+        DateTime BirthDate = DateTime.Parse(dateOfBirth);
+        DateTime today = DateTime.Today;
+        
+        int age  = today.Year - BirthDate.Year;
 
-
+        if (today.Month < BirthDate.Month || (today.Month == BirthDate.Month && today.Day < BirthDate.Day))
+        {
+            age = age - 1;
+        }
+        Console.WriteLine("Your age is : " + age);
+        Console.WriteLine("The week you were born in is : "+ BirthDate.DayOfWeek) ;
 
 
     }
