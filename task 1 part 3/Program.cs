@@ -99,7 +99,7 @@ class Program
         {
             Console.WriteLine("No Match");
         }
-        */
+        
         ///////////////////////task 8 ///////////////////////////
 
         Console.WriteLine("Please enter your membership start date  like this format (2026-01-10): ");
@@ -129,9 +129,27 @@ class Program
         Console.WriteLine("The number rounded to the nearest whole number is: "+ Math.Round(decimalNumber));
         Console.WriteLine("The number always rounded up is : "+  Math.Ceiling(decimalNumber));
         Console.WriteLine("The number always rounded down is : "+  Math.Floor(decimalNumber));
+        */
+        ///////////////////////task 10 ///////////////////////////
         
         
-        
-        
+        Console.WriteLine("Please enter a sentence: ");
+        string sentence = Console.ReadLine();
+        Console.WriteLine("Please enter the word you want to check:  ");
+        string word = Console.ReadLine();
+
+        int firstIndex = sentence.IndexOf(word);
+        int lastIndex = sentence.LastIndexOf(word);
+
+        if (firstIndex == -1)
+        {
+            Console.WriteLine("Not found!");
+        }
+        else
+        {
+            Console.WriteLine("The word /" +word +"/ first appear in " + firstIndex);
+            Console.WriteLine("The word /" +word +"/ last appear in " + lastIndex);
+            
+        }
     }
 }
