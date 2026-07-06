@@ -1,4 +1,6 @@
-﻿namespace task_1_part_3;
+﻿using System.Linq.Expressions;
+
+namespace task_1_part_3;
 
 class Program
 {
@@ -129,7 +131,7 @@ class Program
         Console.WriteLine("The number rounded to the nearest whole number is: "+ Math.Round(decimalNumber));
         Console.WriteLine("The number always rounded up is : "+  Math.Ceiling(decimalNumber));
         Console.WriteLine("The number always rounded down is : "+  Math.Floor(decimalNumber));
-        */
+       
         ///////////////////////task 10 ///////////////////////////
         
         
@@ -149,7 +151,44 @@ class Program
         {
             Console.WriteLine("The word /" +word +"/ first appear in " + firstIndex);
             Console.WriteLine("The word /" +word +"/ last appear in " + lastIndex);
-            
-        }
+             */
+        
+        
+        ////////////////////////////////////////////task 10 /////////////////////////////
+        
+       
+         int randomNumber = new Random().Next(1000, 10000);
+         Console.WriteLine(randomNumber);
+
+         bool verified = true;
+         
+         for (int i = 1; i <= 3; i++)
+         {
+             Console.WriteLine("please enter the verification code: ");
+             try
+             {
+                 int code = int.Parse(Console.ReadLine());
+                 if (code == randomNumber)
+                 {
+                     Console.WriteLine("verified");
+                     verified = false;
+                     break;
+                 }
+                 
+             }
+             catch (FormatException)
+             {
+                 Console.WriteLine("invalid input");
+             }
+             
+         }
+         if (verified)
+         {
+             Console.WriteLine("verification failed");
+         }
+
+
+
+
     }
 }
