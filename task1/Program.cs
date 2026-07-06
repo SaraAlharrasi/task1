@@ -414,7 +414,7 @@ class Program
                {
                    Console.WriteLine("invalid triangle");
                }
-               */
+               
                
                // ----------------------------------------exercise 14 -----------------------------------
                
@@ -471,8 +471,72 @@ class Program
                    Console.WriteLine("Tax : " + tax);
                    Console.WriteLine("Final total : " + finalTotal);
                }
+               */
                
-               
+        // ----------------------------------------exercise 15 -----------------------------------
+
+              Console.WriteLine("Enter program type (e.g. S / A):  ");
+              string programType = Console.ReadLine();
               
+              Console.WriteLine("Enter GPA: ");
+              double gpa = double.Parse(Console.ReadLine());
+              
+              
+              Console.WriteLine("Enter Entrance exam score (out of 100): ");
+              int ExamScore = int.Parse(Console.ReadLine());
+              
+              
+              Console.WriteLine("Do you have any extracurricular achievement? (yes/no) ");
+              string ExtracurricularAchieved = Console.ReadLine();
+
+              switch (programType)
+              {
+                  case "S":
+                      if (gpa >= 3 && ExamScore >= 75)
+                      {
+                          Console.WriteLine("Admitted");
+                      }
+                      else if (ExtracurricularAchieved == "yes")
+                      {
+                          Console.WriteLine("Conditionally Admitted");
+                          break;
+
+                      }
+                      else
+                      {
+                          Console.WriteLine("Not Admitted");
+                      }
+
+                      break;
+
+                  case "A":
+                      if (gpa >= 2.5 && ExamScore >= 60)
+                      {
+                          Console.WriteLine("Admitted");
+                      }
+
+                      else if (ExtracurricularAchieved == "yes")
+                      {
+                          Console.WriteLine("Conditionally Admitted");
+                          break;
+
+                      }
+                      else
+                      {
+                          Console.WriteLine(" Not Admitted");
+                      }
+
+                      break;
+                  default:
+                      Console.WriteLine("invalid input");
+                      break;
+              }
+
+
+
     }
-}
+
+    }
+        
+              
+              
