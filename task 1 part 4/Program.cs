@@ -47,7 +47,7 @@ class Program
     {
         return 2 * (length + width);
     }
-    */
+    
     //--------------------------------------- task 7 -----------------------------
 
     static string GetGradeLetter (int grade)
@@ -71,6 +71,16 @@ class Program
         else
         {
             return "F";
+        }
+    }
+    */
+    //--------------------------------------- task 8 -----------------------------
+
+    static void CountDown(int startingNumber)
+    {
+        for (int i = startingNumber; i >= 1; i--)
+        {
+            Console.WriteLine(i);
         }
     }
     
@@ -125,7 +135,7 @@ class Program
         
         Console.WriteLine("The area of the rectangle is: " +  CalculateArea(length, width));
         Console.WriteLine("The perimeter of the rectangle is: " +  CalculatePerimeter(length, width));
-        */
+        
         
         
         //--------------------------------------- task 7 -----------------------------
@@ -134,10 +144,14 @@ class Program
         int grade = int.Parse(Console.ReadLine());
         
         Console.WriteLine("Your score is " + GetGradeLetter(grade));
+*/
+        
+        //--------------------------------------- task 8 -----------------------------
 
-
-
-
+        Console.WriteLine("please enter the starting number: ");
+        int startNumber = int.Parse(Console.ReadLine());
+        
+        CountDown(startNumber);
 
 
 
