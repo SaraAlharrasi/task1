@@ -37,7 +37,7 @@ class Program
         return number % 2 ==0 ;
         
     }
-    */
+    
     //--------------------------------------- task 6 -----------------------------
     static double CalculateArea( double length, double width)
     {
@@ -46,6 +46,32 @@ class Program
     static double CalculatePerimeter (double length, double width)
     {
         return 2 * (length + width);
+    }
+    */
+    //--------------------------------------- task 7 -----------------------------
+
+    static string GetGradeLetter (int grade)
+    {
+        if (grade >=90 && grade  <= 100)
+        {
+            return "A";
+        }
+        else if (grade >= 80 && grade < 90)
+        {
+            return "B";
+        }
+        else if (grade >= 70 && grade < 80)
+        {
+            return "C";
+        }
+        else if (grade >= 50 && grade < 70)
+        {
+            return "D";
+        }
+        else
+        {
+            return "F";
+        }
     }
     
     static void Main(string[] args)
@@ -88,7 +114,7 @@ class Program
         {
             Console.WriteLine("odd");
         }
-         */
+         
         //--------------------------------------- task 6 -----------------------------
         
         Console.WriteLine("Please enter the length ot the rectangle: ");
@@ -99,7 +125,21 @@ class Program
         
         Console.WriteLine("The area of the rectangle is: " +  CalculateArea(length, width));
         Console.WriteLine("The perimeter of the rectangle is: " +  CalculatePerimeter(length, width));
+        */
         
         
+        //--------------------------------------- task 7 -----------------------------
+
+        Console.WriteLine("Enter your score: ");
+        int grade = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Your score is " + GetGradeLetter(grade));
+
+
+
+
+
+
+
     }
 }
