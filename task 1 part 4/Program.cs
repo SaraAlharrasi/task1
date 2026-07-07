@@ -30,13 +30,24 @@ class Program
         Console.WriteLine("3: Exit");
         
     }
-    */
+    
     //--------------------------------------- task 5 -----------------------------
     static bool IsEven(int number)
     {
         return number % 2 ==0 ;
         
     }
+    */
+    //--------------------------------------- task 6 -----------------------------
+    static double CalculateArea( double length, double width)
+    {
+        return length * width;
+    }
+    static double CalculatePerimeter (double length, double width)
+    {
+        return 2 * (length + width);
+    }
+    
     static void Main(string[] args)
     {
         //--------------------------------------- task 1 -----------------------------
@@ -63,7 +74,7 @@ class Program
         //--------------------------------------- task 4 -----------------------------
         
         DisplayMenu();
-        */
+       
         
         //--------------------------------------- task 5 -----------------------------
         Console.WriteLine("enter a number");
@@ -77,5 +88,18 @@ class Program
         {
             Console.WriteLine("odd");
         }
+         */
+        //--------------------------------------- task 6 -----------------------------
+        
+        Console.WriteLine("Please enter the length ot the rectangle: ");
+        double length = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Please enter the width ot the rectangle: ");
+        double width = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("The area of the rectangle is: " +  CalculateArea(length, width));
+        Console.WriteLine("The perimeter of the rectangle is: " +  CalculatePerimeter(length, width));
+        
+        
     }
 }
