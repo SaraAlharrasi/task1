@@ -115,7 +115,7 @@ class Program
     {
         return length * width;
     }
-    */ 
+   
     
     //--------------------------------------- task 11 -----------------------------
 
@@ -149,8 +149,50 @@ class Program
     {
         Console.WriteLine( "The result of the " + operationName + " = " + result); 
     }
+     */ 
     
-    
+    //--------------------------------------- task 12 -----------------------------
+
+    static double CalculateAverage(double sore1, double sore2, double sore3)
+    {
+        double average = (sore1 + sore2 + sore3) / 3;
+        return average;
+
+    }
+
+    static string GetGradeLetter(double average)
+    {
+        if ( average >=90 && average  <= 100)
+        {
+            return "A";
+        }
+        else if (average >= 80 && average < 90)
+        {
+            return "B";
+        }
+        else if (average >= 70 && average < 80)
+        {
+            return "C";
+        }
+        else if (average >= 50 && average < 70)
+        {
+            return "D";
+        }
+        else
+        {
+            return "F";
+        }
+        
+    }
+
+    static void PrintReportCard(string name, double average, string gradeLetter)
+    {
+        Console.WriteLine("Student Name: " + name);
+        Console.WriteLine("Student Average : " + average);
+        Console.WriteLine("Student grade Letter: : " + gradeLetter);
+        
+        
+    }
     
     
     
@@ -260,7 +302,7 @@ class Program
         {
             Console.WriteLine("invalid input");
         }
-        */
+        
         
         
         //--------------------------------------- task 11 -----------------------------
@@ -305,6 +347,26 @@ class Program
                     break;
             }
         }
+*/
+        
+        //--------------------------------------- task 12 -----------------------------
+        
+        Console.WriteLine("Enter Student Name: ");
+        string name = Console.ReadLine();
+        
+        Console.WriteLine("Enter first Subject score: ");
+        double score1 = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Enter second Subject score: ");
+        double score2 = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Enter third Subject score: ");
+        double score3 = double.Parse(Console.ReadLine());
+        
+        double average = CalculateAverage(score1, score2, score3);
+        string gradeLetter = GetGradeLetter(average);
+
+        PrintReportCard(name, average, gradeLetter);
 
 
 
