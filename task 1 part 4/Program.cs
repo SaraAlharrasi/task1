@@ -73,7 +73,7 @@ class Program
             return "F";
         }
     }
-    */
+    
     //--------------------------------------- task 8 -----------------------------
 
     static void CountDown(int startingNumber)
@@ -83,6 +83,26 @@ class Program
             Console.WriteLine(i);
         }
     }
+    
+    */
+    //--------------------------------------- task 9 -----------------------------
+
+    static int Multiply(int num1, int num2)
+    {
+        return num1 * num2;
+    }
+
+    static double Multiply(double num1, double num2)
+    {
+        return num1 * num2;
+    }
+
+    static int Multiply(int num1, int num2, int num3)
+    {
+        return num1 * num2 * num3;
+    }
+    
+    
     
     static void Main(string[] args)
     {
@@ -144,7 +164,7 @@ class Program
         int grade = int.Parse(Console.ReadLine());
         
         Console.WriteLine("Your score is " + GetGradeLetter(grade));
-*/
+
         
         //--------------------------------------- task 8 -----------------------------
 
@@ -152,8 +172,13 @@ class Program
         int startNumber = int.Parse(Console.ReadLine());
         
         CountDown(startNumber);
+*/
+        
+        //--------------------------------------- task 9 -----------------------------
 
-
-
+        Console.WriteLine (Multiply (4, 6));
+        Console.WriteLine (Multiply (5.7 , 9.8));
+        Console.WriteLine(Multiply (4, 2 , 8));
+        
     }
 }
