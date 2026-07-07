@@ -102,7 +102,7 @@ class Program
         return num1 * num2 * num3;
     }
     
-  */ 
+  
     
     //--------------------------------------- task 10 -----------------------------
 
@@ -115,6 +115,43 @@ class Program
     {
         return length * width;
     }
+    */ 
+    
+    //--------------------------------------- task 11 -----------------------------
+
+    static double Add(double x, double y)
+    {
+        return x + y;
+    }
+    static double Subtract(double x, double y)
+    {
+        return x - y;
+    }
+
+    static double Multiply(double x, double y)
+    {
+        return x * y;
+    }
+
+    static double Divide(double x, double y)
+    {
+        try
+        {
+            return x / y;
+        }
+        catch (DivideByZeroException)
+        {
+            return 0;
+        }
+    }
+
+    static void DisplayResult(string operationName, double result)
+    {
+        Console.WriteLine( "The result of the " + operationName + " = " + result); 
+    }
+    
+    
+    
     
     
     static void Main(string[] args)
@@ -192,7 +229,7 @@ class Program
         Console.WriteLine (Multiply (5.7 , 9.8));
         Console.WriteLine(Multiply (4, 2 , 8));
         
-        */
+        
 
         //--------------------------------------- task 10 -----------------------------
         
@@ -223,5 +260,53 @@ class Program
         {
             Console.WriteLine("invalid input");
         }
+        */
+        
+        
+        //--------------------------------------- task 11 -----------------------------
+
+        bool IsActive = true;
+
+        while (IsActive)
+        {
+            Console.WriteLine("enter the first number: ");
+            double x = double.Parse(Console.ReadLine());
+        
+            Console.WriteLine("enter the second number: ");
+            double y = double.Parse(Console.ReadLine());
+        
+            Console.WriteLine("choose operation: ");
+            Console.WriteLine(" 1 : + ");
+            Console.WriteLine(" 2 : - ");
+            Console.WriteLine(" 3 : * ");
+            Console.WriteLine(" 4 : / ");
+            Console.WriteLine(" 5 :  Exit");
+            string operation = Console.ReadLine();
+            
+            switch (operation)
+            {
+                case "1" : 
+                    DisplayResult(operation,Add(x, y) );
+                    break;
+                case "2" : 
+                    DisplayResult(operation,Subtract(x, y) );
+                    break;
+                case "3" : 
+                    DisplayResult(operation,Multiply(x, y) );
+                    break;
+                case "4" :
+                    DisplayResult(operation,Divide(x, y) );
+                    break;
+                case "5" :
+                    IsActive = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid operation");
+                    break;
+            }
+        }
+
+
+
     }
 }
