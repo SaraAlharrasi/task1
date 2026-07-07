@@ -84,7 +84,7 @@ class Program
         }
     }
     
-    */
+  
     //--------------------------------------- task 9 -----------------------------
 
     static int Multiply(int num1, int num2)
@@ -102,6 +102,19 @@ class Program
         return num1 * num2 * num3;
     }
     
+  */ 
+    
+    //--------------------------------------- task 10 -----------------------------
+
+    static double CalculateArea(double length)
+    {
+        return Math.Pow(length, 2);
+    }
+
+    static double CalculateArea(double length, double width)
+    {
+        return length * width;
+    }
     
     
     static void Main(string[] args)
@@ -172,13 +185,43 @@ class Program
         int startNumber = int.Parse(Console.ReadLine());
         
         CountDown(startNumber);
-*/
-        
+    
         //--------------------------------------- task 9 -----------------------------
 
         Console.WriteLine (Multiply (4, 6));
         Console.WriteLine (Multiply (5.7 , 9.8));
         Console.WriteLine(Multiply (4, 2 , 8));
         
+        */
+
+        //--------------------------------------- task 10 -----------------------------
+        
+        
+        Console.WriteLine("choose a shape: (rectangle/ square)");
+        string shape = Console.ReadLine();
+        
+        
+
+        if (shape == "rectangle")
+        {
+            Console.WriteLine("enter length: ");
+            double length = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine("enter width: ");
+            double width = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine("the area is: " + CalculateArea(length, width));
+        }
+        else if (shape == "square")
+        {
+            Console.WriteLine("enter length: ");
+            double length = double.Parse(Console.ReadLine());
+            
+            Console.WriteLine("the area is: " + CalculateArea(length));
+        }
+        else
+        {
+            Console.WriteLine("invalid input");
+        }
     }
 }
