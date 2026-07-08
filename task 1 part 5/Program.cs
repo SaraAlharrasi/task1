@@ -5,7 +5,8 @@ namespace task_1_part_5;
 class Program
 {
 
-
+    //-------------------------------------- Task 9 -----------------------------------------------
+    /*
     static double CalculateAverage(List<int> grades)
     {
         double average = 0 ;
@@ -21,6 +22,23 @@ class Program
     {
         int firstToFail = grades.Find(x => x < 60);
         return firstToFail;
+    }
+    */
+    
+    static Queue<string> RemoveJob(Queue<string> jobs, string jobToRemove)
+    {
+        Queue<string> newQueue = new Queue<string>();
+
+        while (jobs.Count > 0)
+        {
+            string job = jobs.Dequeue();
+            if (job != jobToRemove)
+            {
+                newQueue.Enqueue(job);
+            }
+        }
+
+        return newQueue;
     }
     static void Main(string[] args)
     {
@@ -229,7 +247,7 @@ class Program
             Console.WriteLine(action);
         }
         
-        */
+        
         
         //-------------------------------------- Task 9 -----------------------------------------------
         Console.WriteLine("how many grades do you want to enter: ");
@@ -246,9 +264,47 @@ class Program
 
         Console.WriteLine($"Average grade: {CalculateAverage(studentGrades)}");
         Console.WriteLine($"First Failing Grade: {FindFirstFailing(studentGrades)}");
-       
+       */
 
+        //-------------------------------------- Task 10 -----------------------------------------------
+        
+        Queue<string> printQueue = new Queue<string>();
+        bool isAdding = true;
 
+        while (isAdding)
+        {
+            Console.WriteLine("Enter print job name : ");
+            string job = Console.ReadLine();
+
+            if (job == "done")
+            {
+                isAdding = false;
+            }
+            else
+            {
+                printQueue.Enqueue(job);
+            }
+        }
+
+        Console.WriteLine("queue before cancellation :");
+        foreach (string job in printQueue)
+        {
+            Console.WriteLine(job);
+        }
+
+        Console.WriteLine("Enter the job name to cancel: ");
+        string jobToCancel = Console.ReadLine();
+
+        printQueue = RemoveJob(printQueue, jobToCancel);
+
+        Console.WriteLine("queue after cancellation:");
+        foreach (string job in printQueue)
+        {
+            Console.WriteLine(job);
+        }
+    
+
+        
 
     }
 }
