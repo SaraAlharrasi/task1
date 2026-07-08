@@ -124,7 +124,7 @@ class Program
         Console.WriteLine($"Highest grade:  {studentGrades[4]}");
         Console.WriteLine($"Average  grade: {averageGrade}");
         
-*/
+
 
         //-------------------------------------- Task 6 -----------------------------------------------
 
@@ -153,6 +153,65 @@ class Program
         string removeItem = Console.ReadLine();
         shoppingList.Remove(removeItem);
         Console.WriteLine(string.Join(", ", shoppingList));
+        
+        
+        //-------------------------------------- Task 7 -----------------------------------------------
+
+
+        List<int> gameScore = new List<int>();
+
+        for (int counter = 0; counter < 5; counter++)
+        {
+            Console.WriteLine($"enter {counter + 1} score" );
+            int score = int.Parse(Console.ReadLine());
+            gameScore.Add(score);
+        }
+        
+        gameScore.Sort();
+        gameScore.Reverse();
+        
+        Console.WriteLine($"1st place : {gameScore[0]}");
+        Console.WriteLine($"2nd place : {gameScore[1]}");
+        Console.WriteLine($"3ed place : {gameScore[2]}");
+        
+        
+        */
+        
+        //-------------------------------------- Task 8 -----------------------------------------------
+        Stack<string> trackAction = new Stack<string>();
+
+        bool isTrying = true;
+
+        while (isTrying)
+        {
+            Console.WriteLine("enter action: ");
+            string action = Console.ReadLine();
+
+            if (action == "stop")
+            {
+                isTrying = false;
+            }
+            else
+            {
+                trackAction.Push(action);
+            }
+        }
+        Console.WriteLine("undo");
+        string undo1 = trackAction.Pop();
+        Console.WriteLine(undo1);
+        Console.WriteLine("undo");
+        string undo2 = trackAction.Pop();
+        Console.WriteLine(undo2);
+
+
+        foreach (string action in trackAction)
+        {
+            Console.WriteLine(action);
+        }
+        
+
+
+
 
     }
 }
