@@ -128,7 +128,31 @@ class Program
 
         //-------------------------------------- Task 6 -----------------------------------------------
 
+        List<string> shoppingList = new List<string>();
 
+        bool isAdding = true;
+
+        while (isAdding)
+        {
+            Console.WriteLine("enter item:");
+            string item = Console.ReadLine();
+
+            if (item == "done")
+            {
+                isAdding = false;
+            }
+            else
+            {
+                shoppingList.Add(item);
+            }
+        }
+        Console.WriteLine("here is your list" );
+        Console.WriteLine(string.Join(" ",shoppingList));
+
+        Console.WriteLine("enter the item you want to remove: ");
+        string removeItem = Console.ReadLine();
+        shoppingList.Remove(removeItem);
+        Console.WriteLine(string.Join(", ", shoppingList));
 
     }
 }
