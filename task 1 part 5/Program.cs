@@ -67,7 +67,7 @@ class Program
 
                 break;
         }
-       */
+       
         
         //-------------------------------------- Task 3 -----------------------------------------------
         
@@ -84,13 +84,22 @@ class Program
         browserHistory.Pop();
         Console.WriteLine($"last page : {browserHistory.Peek()}");
         
+        */
+        //-------------------------------------- Task 4 -----------------------------------------------
         
+        Queue<string> CustomerQueue = new Queue<string>();
+
+        for (int counter = 0; counter <= 2; counter++)
+        {
+            Console.WriteLine("enter customer name : ");
+            string customerName = Console.ReadLine();
+            CustomerQueue.Enqueue(customerName);
+        }
+        // calling out customer name (indicating that its their time to be served)
         
+        Console.WriteLine(CustomerQueue.Peek().ToUpper()); // using all caps to indicate load voice for calling out loud
         
-        
-        
-        
-        
+        Console.WriteLine($"{CustomerQueue.Dequeue()} was served!");
         
         
     }
