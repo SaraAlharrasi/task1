@@ -84,7 +84,7 @@ class Program
         browserHistory.Pop();
         Console.WriteLine($"last page : {browserHistory.Peek()}");
         
-        */
+       
         //-------------------------------------- Task 4 -----------------------------------------------
         
         Queue<string> CustomerQueue = new Queue<string>();
@@ -100,7 +100,35 @@ class Program
         Console.WriteLine(CustomerQueue.Peek().ToUpper()); // using all caps to indicate load voice for calling out loud
         
         Console.WriteLine($"{CustomerQueue.Dequeue()} was served!");
+         
         
         
+        //-------------------------------------- Task 5 -----------------------------------------------
+
+
+        int[] studentGrades = new int[5];
+        double average = 0;
+        double averageGrade =  average/ studentGrades.Length;
+       
+
+        for (int counter = 0; counter < studentGrades.Length; counter++)
+        {
+            Console.WriteLine($"Enter student grade {counter + 1} : ");
+            studentGrades[counter] = int.Parse(Console.ReadLine());
+            average += studentGrades[counter];
+        }
+        
+        Array.Sort(studentGrades);
+        
+        Console.WriteLine($"Lowest grade:  {studentGrades[0]}");
+        Console.WriteLine($"Highest grade:  {studentGrades[4]}");
+        Console.WriteLine($"Average  grade: {averageGrade}");
+        
+*/
+
+        //-------------------------------------- Task 6 -----------------------------------------------
+
+
+
     }
 }
