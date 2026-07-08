@@ -31,7 +31,7 @@ class Program
         {
             Console.WriteLine($"grade: {grade}");
         }
-        */
+        
         
         //-------------------------------------- Task 2 -----------------------------------------------
 
@@ -67,6 +67,28 @@ class Program
 
                 break;
         }
+       */
+        
+        //-------------------------------------- Task 3 -----------------------------------------------
+        
+        Stack<string> browserHistory = new Stack<string>();
+
+        for (int counter = 0; counter < 3; counter++)
+        {
+            Console.WriteLine("Enter a URL: ");
+            string url = Console.ReadLine();
+            browserHistory.Push(url);
+        }
+        
+        
+        browserHistory.Pop();
+        Console.WriteLine($"last page : {browserHistory.Peek()}");
+        
+        
+        
+        
+        
+        
         
         
         
