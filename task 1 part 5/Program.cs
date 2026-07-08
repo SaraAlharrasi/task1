@@ -1,7 +1,27 @@
-﻿namespace task_1_part_5;
+﻿using System.Diagnostics.Metrics;
+
+namespace task_1_part_5;
 
 class Program
 {
+
+
+    static double CalculateAverage(List<int> grades)
+    {
+        double average = 0 ;
+        for (int counter = 0; counter < grades.Count; counter++)
+        {
+            average += grades[counter];
+        }
+        average =  average  / grades.Count;
+        return average;
+    }
+
+    static int FindFirstFailing(List<int> grades)
+    {
+        int firstToFail = grades.Find(x => x < 60);
+        return firstToFail;
+    }
     static void Main(string[] args)
     {
         
@@ -175,7 +195,7 @@ class Program
         Console.WriteLine($"3ed place : {gameScore[2]}");
         
         
-        */
+        
         
         //-------------------------------------- Task 8 -----------------------------------------------
         Stack<string> trackAction = new Stack<string>();
@@ -209,7 +229,24 @@ class Program
             Console.WriteLine(action);
         }
         
+        */
+        
+        //-------------------------------------- Task 9 -----------------------------------------------
+        Console.WriteLine("how many grades do you want to enter: ");
+        int numOfGrades = int.Parse(Console.ReadLine());
+        
+        List<int> studentGrades = new List<int>();
 
+        for (int i = 0; i < numOfGrades ; i++)
+        {
+            Console.WriteLine($"Enter grade {i+1}: ");
+            int grade = int.Parse(Console.ReadLine());
+            studentGrades.Add(grade);
+        }
+
+        Console.WriteLine($"Average grade: {CalculateAverage(studentGrades)}");
+        Console.WriteLine($"First Failing Grade: {FindFirstFailing(studentGrades)}");
+       
 
 
 
