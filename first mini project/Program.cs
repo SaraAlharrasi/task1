@@ -117,10 +117,7 @@ namespace BankingSystemApp
                     accountNumbers.Add(numberOfAccount);
                     balances.Add(depositAmount);
                 }
-                
-
             }
-
         }
 
         static void DepositMoney()
