@@ -119,7 +119,6 @@ namespace BankingSystemApp
                 }
             }
         }
-
         static void DepositMoney()
         {
             Console.WriteLine("Enter account number:");
