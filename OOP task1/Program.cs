@@ -1,4 +1,6 @@
-﻿namespace OOP_task1;
+﻿using System.Security.Cryptography;
+
+namespace OOP_task1;
 
 public class BankAccount
 {
@@ -118,20 +120,20 @@ public class Product
 
 class Program
 {
-    
-    static BankAccount account1 = new BankAccount{AccountNumber = 1163, HolderName = "karim", Balance = 120};
-    static BankAccount account2 = new BankAccount{AccountNumber = 15203, HolderName = "Ali", Balance = 63};
-    
-    static Student student1 = new Student{ Name= "Mohammed", Address = "Muscat", Grade = 63};
-    static Student student2 = new Student{ Name= "Fatima", Address = "Nizwa", Grade = 90};
-    
-    static Product product1 = new Product{ ProductName = "wireless mouse", Price = 5.500, StockQuantity = 50};
-    static Product product2 = new Product{ ProductName = "mechanical keyboard", Price = 15.750, StockQuantity = 20};
-    
-    
+
+    static BankAccount account1 = new BankAccount { AccountNumber = 1163, HolderName = "karim", Balance = 120 };
+    static BankAccount account2 = new BankAccount { AccountNumber = 15203, HolderName = "Ali", Balance = 63 };
+
+    static Student student1 = new Student { Name = "Mohammed", Address = "Muscat", Grade = 63 };
+    static Student student2 = new Student { Name = "Fatima", Address = "Nizwa", Grade = 90 };
+
+    static Product product1 = new Product { ProductName = "wireless mouse", Price = 5.500, StockQuantity = 50 };
+    static Product product2 = new Product { ProductName = "mechanical keyboard", Price = 15.750, StockQuantity = 20 };
+
+
     static void Main(string[] args)
     {
-        
+
         Console.WriteLine("Welcome to the system!");
 
         bool exitApp = false;
@@ -139,7 +141,7 @@ class Program
         while (!exitApp)
         {
             Console.WriteLine("what would you like to do? ");
-            
+
             Console.WriteLine("1. View Account Details");
             Console.WriteLine("2. Update Student Address");
             Console.WriteLine("3.  Make a Deposit");
@@ -160,24 +162,24 @@ class Program
             Console.WriteLine("18. Overdrawn Account Check");
             Console.WriteLine("19. Set Student Security PIN ");
             Console.WriteLine("20. Exit");
-            
-            
+
+
             int choice = int.Parse(Console.ReadLine());
-            
+
             switch (choice)
             {
                 case 1:
                     PrintBalance();
                     break;
-                
+
                 case 2:
                     updateAddress();
                     break;
-                
+
                 case 3:
                     Deposite();
                     break;
-                
+
                 case 4:
                     Withdraw();
                     break;
@@ -193,7 +195,7 @@ class Program
                 case 8:
                     ProductCheck();
                     break;
-                case 9 :
+                case 9:
                     TransferBetweenAccounts();
                     break;
                 case 10:
@@ -203,6 +205,7 @@ class Program
                     StudentReportCard();
                     break;
                 case 12:
+                    AccountHealthStatus()
                     break;
                 case 13:
                     break;
@@ -224,15 +227,15 @@ class Program
                     break;
             }
         }
-        
+
     }
-    
+
     //--------------------------- case 1 --------------------------
-    static  BankAccount ChoosenAccount()
+    static BankAccount ChoosenAccount()
     {
-        Console.WriteLine("Choose a bank account:  (1/2)"); 
-        
-        string bankaccount =  Console.ReadLine();
+        Console.WriteLine("Choose a bank account:  (1/2)");
+
+        string bankaccount = Console.ReadLine();
         if (bankaccount == "1")
         {
             return account1;
@@ -241,7 +244,7 @@ class Program
         {
             return account2;
         }
-            
+
     }
 
     static void PrintBalance()
@@ -251,12 +254,12 @@ class Program
     }
 
     //--------------------------- case 2 ---------------------------
-    
+
     static Student ChoosenStudent()
     {
-        Console.WriteLine("Choose a student:  (1/2)"); 
-        
-        string StudentChoice =  Console.ReadLine();
+        Console.WriteLine("Choose a student:  (1/2)");
+
+        string StudentChoice = Console.ReadLine();
         if (StudentChoice == "1")
         {
             return student1;
@@ -267,26 +270,27 @@ class Program
         }
 
     }
+
     static void updateAddress()
     {
         Student choosen2 = ChoosenStudent();
         Console.WriteLine("Enter new address: ");
         string newAddress = Console.ReadLine();
-        choosen2.Address =  newAddress;
+        choosen2.Address = newAddress;
         Console.WriteLine($"new address: {choosen2.Address}");
     }
-    
+
     //---------------------------- case 3 ---------------------------
 
     static void Deposite()
     {
         BankAccount choosen1 = ChoosenAccount();
         double depositAmount;
-        
+
         Console.WriteLine("Enter an amount: ");
 
         try
-        { 
+        {
             depositAmount = double.Parse(Console.ReadLine());
         }
         catch (FormatException)
@@ -294,14 +298,14 @@ class Program
             Console.WriteLine("Invalid input");
             return;
         }
-        
+
         choosen1.Deposit(depositAmount);
-        
+
         Console.WriteLine($"Account holder's name: {choosen1.HolderName}");
         Console.WriteLine($"Balance: {choosen1.Balance}");
     }
-    
-    
+
+
     //---------------------------- case 4 ---------------------------
 
     static void Withdraw()
@@ -311,7 +315,7 @@ class Program
         double withdrawalAmount;
 
         try
-        { 
+        {
             withdrawalAmount = double.Parse(Console.ReadLine());
         }
         catch (FormatException)
@@ -319,20 +323,20 @@ class Program
             Console.WriteLine("Invalid input");
             return;
         }
-        
+
         choosen1.Withdraw(withdrawalAmount);
-        
+
         Console.WriteLine($"Balance:  {choosen1.Balance}");
-        
-        
+
+
     }
-    
+
     //---------------------------- case 5 ---------------------------
     static Product ChoosenProduct()
     {
-        Console.WriteLine("Choose a product:  (1/2)"); 
-        
-        string Product =  Console.ReadLine();
+        Console.WriteLine("Choose a product:  (1/2)");
+
+        string Product = Console.ReadLine();
         if (Product == "1")
         {
             return product1;
@@ -350,7 +354,7 @@ class Program
 
         Console.WriteLine($"Total inventory value: {choosen3.GetInventoryValue()}");
     }
-    
+
     //---------------------------- case 6 ---------------------------
 
     static void RegisterStudent()
@@ -358,13 +362,13 @@ class Program
         Student choosen2 = ChoosenStudent();
         Console.WriteLine("Enter your email: ");
         string email = Console.ReadLine();
-        
+
         choosen2.Register(email);
-        
+
         Console.WriteLine("Email has been registered successfully");
     }
-    
-    
+
+
     //---------------------------- case 7 ---------------------------
 
     static void CompareBalances()
@@ -386,8 +390,8 @@ class Program
         }
 
     }
-    
-    
+
+
     //---------------------------- case 8 ---------------------------
 
     static void ProductCheck()
@@ -421,14 +425,14 @@ class Program
         }
 
     }
-    
+
     //---------------------------- case 9 ---------------------------
 
     static void TransferBetweenAccounts()
     {
         BankAccount SourceAccount = ChoosenAccount();
         BankAccount DestinationAccount = ChoosenAccount();
-        
+
         Console.WriteLine("Enter the amount to transfer: ");
         double amount = double.Parse(Console.ReadLine());
 
@@ -436,23 +440,24 @@ class Program
         {
             SourceAccount.Withdraw(amount);
             DestinationAccount.Deposit(amount);
-            
-            Console.WriteLine($"Transfered {amount} from {SourceAccount.HolderName} to {DestinationAccount.HolderName}");
+
+            Console.WriteLine(
+                $"Transfered {amount} from {SourceAccount.HolderName} to {DestinationAccount.HolderName}");
         }
         else
         {
             Console.WriteLine("Insufficient balance");
         }
     }
-    
-    
+
+
     //---------------------------- case 10 ---------------------------
 
     static void UpdateStudentGrade()
     {
         Student choosen2 = ChoosenStudent();
         int grade;
-        
+
         Console.WriteLine("Enter new grade: ");
         try
         {
@@ -467,24 +472,24 @@ class Program
                 Console.WriteLine($"Grade: {choosen2.Grade}");
             }
         }
-        catch(FormatException)
+        catch (FormatException)
         {
             Console.WriteLine("Invalid input");
         }
 
-        
-        
-        
+
+
+
     }
-    
-    
+
+
     //---------------------------- case 11 ---------------------------
 
 
     static void StudentReportCard()
     {
         Student choosen2 = ChoosenStudent();
-        
+
         Console.WriteLine("--------- Student Report Card ---------- ");
         Console.WriteLine($"Student Name: {choosen2.Name}");
         Console.WriteLine($"Student Address: {choosen2.Address}");
@@ -498,6 +503,28 @@ class Program
         {
             Console.WriteLine("Fail");
         }
-        
+
     }
+    
+    //---------------------------- case 12 ---------------------------
+
+    static void AccountHealthStatus()
+    {
+        BankAccount choosen1 = ChoosenAccount();
+
+        if (choosen1.Balance < 50)
+        {
+            Console.WriteLine("Low Balance");
+        }
+        else if (choosen1.Balance >= 1000)
+        {
+            Console.WriteLine("Premium");
+        }
+        else
+        {
+            Console.WriteLine("Healthy");
+        }
+    }
+    
+    //---------------------------- case 13 ---------------------------
 }
