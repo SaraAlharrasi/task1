@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.ComponentModel;
+using System.Security.Cryptography;
 
 namespace OOP_task1;
 
@@ -214,6 +215,7 @@ class Program
                     ScholarshipEligibility();
                     break;
                 case 15:
+                    BalanceTopUp();
                     break;
                 case 16:
                     break;
@@ -577,4 +579,26 @@ class Program
         }
     }
     
+    
+    //---------------------------- case 15 ---------------------------
+
+    static void BalanceTopUp()
+    {
+        BankAccount choosen2 = ChoosenAccount();
+
+        if (choosen2.Balance < 50)
+        {
+            double beforeBalance = choosen2.Balance;
+            double TopUpAmount = 100 -  choosen2.Balance;
+            
+            choosen2.Deposit(TopUpAmount);
+            
+            Console.WriteLine("Balance before Top up amount: " + beforeBalance);
+            Console.WriteLine($"After Top up amount: {choosen2.Balance}");
+        }
+        else
+        {
+            Console.WriteLine("No top up needed");
+        }
+    }
 }
