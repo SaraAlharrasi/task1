@@ -184,6 +184,9 @@ class Program
                 case 5:
                     ViewProduct();
                     break;
+                case 6:
+                    RegisterStudent();
+                    break;
             }
         }
         
@@ -312,8 +315,22 @@ class Program
 
         Console.WriteLine($"Total inventory value: {choosen3.GetInventoryValue()}");
     }
+    
+    //---------------------------- case 6 ---------------------------
 
-   
+    static void RegisterStudent()
+    {
+        Student choosen2 = ChoosenStudent();
+        Console.WriteLine("Enter your email: ");
+        string email = Console.ReadLine();
+        
+        choosen2.Register(email);
+        
+        Console.WriteLine("Email has been registered successfully");
+    }
     
     
+
+
+
 }
