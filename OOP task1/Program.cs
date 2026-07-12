@@ -211,6 +211,7 @@ class Program
                     BulkSaleWithRevenue();
                     break;
                 case 14:
+                    ScholarshipEligibility();
                     break;
                 case 15:
                     break;
@@ -550,5 +551,30 @@ class Program
         }
     }
     
+    //---------------------------- case 14 ---------------------------
+
+    static void ScholarshipEligibility()
+    {
+        Student choosen2 = ChoosenStudent();
+        BankAccount choosen1 = ChoosenAccount();
+
+        if (choosen1.Balance >= 100 && choosen2.Grade >= 80)
+        {
+            Console.WriteLine("Eligible");
+        }
+        else 
+        {
+            if (choosen1.Balance < 100)
+            {
+                Console.WriteLine("Insufficient balance for scholarship");
+            }
+            if (choosen2.Grade < 80)
+
+            {
+                Console.WriteLine("Grades not high enough");
+            }
+            
+        }
+    }
     
 }
