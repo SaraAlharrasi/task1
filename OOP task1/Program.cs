@@ -200,6 +200,7 @@ class Program
                     UpdateStudentGrade();
                     break;
                 case 11:
+                    StudentReportCard();
                     break;
                 case 12:
                     break;
@@ -477,4 +478,26 @@ class Program
     }
     
     
+    //---------------------------- case 11 ---------------------------
+
+
+    static void StudentReportCard()
+    {
+        Student choosen2 = ChoosenStudent();
+        
+        Console.WriteLine("--------- Student Report Card ---------- ");
+        Console.WriteLine($"Student Name: {choosen2.Name}");
+        Console.WriteLine($"Student Address: {choosen2.Address}");
+        Console.WriteLine($"Student Grade : {choosen2.Grade}");
+
+        if (choosen2.Grade >= 60)
+        {
+            Console.WriteLine("Pass");
+        }
+        else
+        {
+            Console.WriteLine("Fail");
+        }
+        
+    }
 }
