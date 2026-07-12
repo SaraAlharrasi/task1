@@ -181,6 +181,9 @@ class Program
                 case 4:
                     Withdraw();
                     break;
+                case 5:
+                    ViewProduct();
+                    break;
             }
         }
         
@@ -285,6 +288,8 @@ class Program
         
         
     }
+    
+    //---------------------------- case 5 ---------------------------
     static Product ChoosenProduct()
     {
         Console.WriteLine("Choose a product:  (1/2)"); 
@@ -299,6 +304,13 @@ class Program
             return product2;
         }
 
+    }
+
+    static void ViewProduct()
+    {
+        Product choosen3 = ChoosenProduct();
+
+        Console.WriteLine($"Total inventory value: {choosen3.GetInventoryValue()}");
     }
 
    
