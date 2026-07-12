@@ -187,6 +187,39 @@ class Program
                 case 6:
                     RegisterStudent();
                     break;
+                case 7:
+                    CompareBalances();
+                    break;
+                case 8:
+                    ProductCheck();
+                    break;
+                case 9 :
+                    TransferBetweenAccounts();
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+                case 15:
+                    break;
+                case 16:
+                    break;
+                case 17:
+                    break;
+                case 18:
+                    break;
+                case 19:
+                    break;
+                case 20:
+                    Console.WriteLine("Have a nice day :)!");
+                    exitApp = true;
+                    break;
             }
         }
         
@@ -330,7 +363,87 @@ class Program
     }
     
     
+    //---------------------------- case 7 ---------------------------
 
+    static void CompareBalances()
+    {
+        BankAccount firstAccount = account1;
+        BankAccount secondAccount = account2;
 
+        if (firstAccount.Balance < secondAccount.Balance)
+        {
+            Console.WriteLine($"{secondAccount.HolderName} has more balance than {firstAccount.HolderName}");
+        }
+        else if (firstAccount.Balance == secondAccount.Balance)
+        {
+            Console.WriteLine($"{firstAccount.HolderName} is equal to {secondAccount.HolderName}");
+        }
+        else
+        {
+            Console.WriteLine($"{firstAccount.HolderName} has more balance than {secondAccount.HolderName}");
+        }
 
+    }
+    
+    
+    //---------------------------- case 8 ---------------------------
+
+    static void ProductCheck()
+    {
+        Product choosen3 = ChoosenProduct();
+        int quantity;
+
+        Console.WriteLine("Enter quantity: ");
+
+        try
+        {
+            quantity = int.Parse(Console.ReadLine());
+            choosen3.Restock(quantity);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input");
+        }
+
+        if (choosen3.StockQuantity < 10)
+        {
+            Console.WriteLine("Low");
+        }
+        else if (choosen3.StockQuantity <= 49)
+        {
+            Console.WriteLine("Moderate");
+        }
+        else
+        {
+            Console.WriteLine("Well stocked");
+        }
+
+    }
+    
+    //---------------------------- case 9 ---------------------------
+
+    static void TransferBetweenAccounts()
+    {
+        BankAccount SourceAccount = ChoosenAccount();
+        BankAccount DestinationAccount = ChoosenAccount();
+        
+        Console.WriteLine("Enter the amount to transfer: ");
+        double amount = double.Parse(Console.ReadLine());
+
+        if (SourceAccount.Balance >= amount)
+        {
+            SourceAccount.Withdraw(amount);
+            DestinationAccount.Deposit(amount);
+            
+            Console.WriteLine($"Transfered {amount} from {SourceAccount.HolderName} to {DestinationAccount.HolderName}");
+        }
+        else
+        {
+            Console.WriteLine("Insufficient balance");
+        }
+    }
+    
+    
+    
+    
 }
