@@ -167,31 +167,22 @@ class Program
             switch (choice)
             {
                 case 1:
-                    BankAccount choosen1 = ChoosenAccount();
-                    Console.WriteLine($"Current balance is : {choosen1.CheckBalance()}");
+                    PrintBalance();
                     break;
                 
                 case 2:
-                    Student choosen2 = ChoosenStudent();
-                    Console.WriteLine("Enter new address: ");
-                    string NewAddress = Console.ReadLine();
-                    choosen2.Address =  NewAddress;
-                    
-                    Console.WriteLine($"new address: {choosen2.Address}");
+                    updateAddress();
+                    break;
+                case 3:
+                    Deposite();
                     break;
                     
             }
         }
-
-
-
-
-            
-            
-       
         
     }
     
+    //--------------------------- case 1 --------------------------
     static  BankAccount ChoosenAccount()
     {
         Console.WriteLine("Choose a bank account:  (1/2)"); 
@@ -208,12 +199,20 @@ class Program
             
     }
 
+    static void PrintBalance()
+    {
+        BankAccount choosen1 = ChoosenAccount();
+        Console.WriteLine($"Current balance is : {choosen1.CheckBalance()}");
+    }
+
+    //--------------------------- case 2 ---------------------------
+    
     static Student ChoosenStudent()
     {
         Console.WriteLine("Choose a student:  (1/2)"); 
         
-        string Student =  Console.ReadLine();
-        if (Student == "1")
+        string StudentChoice =  Console.ReadLine();
+        if (StudentChoice == "1")
         {
             return student1;
         }
@@ -223,6 +222,61 @@ class Program
         }
 
     }
+    static void updateAddress()
+    {
+        Student choosen2 = ChoosenStudent();
+        Console.WriteLine("Enter new address: ");
+        string newAddress = Console.ReadLine();
+        choosen2.Address =  newAddress;
+        Console.WriteLine($"new address: {choosen2.Address}");
+    }
+    
+    //---------------------------- case 3 ---------------------------
+
+    static void Deposite()
+    {
+        BankAccount choosen1 = ChoosenAccount();
+        double depositAmount;
+        
+        Console.WriteLine("Enter an amount: ");
+
+        try
+        { 
+            depositAmount = double.Parse(Console.ReadLine());
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+        
+        choosen1.Deposit(depositAmount);
+        
+        Console.WriteLine($"Account holder's name: {choosen1.HolderName}");
+        Console.WriteLine($"Updated balance: {choosen1.Balance}");
+    }
+    
+    
+    //---------------------------- case 3 ---------------------------
+    
+    
+    static Product ChoosenProduct()
+    {
+        Console.WriteLine("Choose a product:  (1/2)"); 
+        
+        string Product =  Console.ReadLine();
+        if (Product == "1")
+        {
+            return product1;
+        }
+        else
+        {
+            return product2;
+        }
+
+    }
+
+   
     
     
 }
