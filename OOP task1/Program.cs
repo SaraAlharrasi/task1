@@ -173,10 +173,14 @@ class Program
                 case 2:
                     updateAddress();
                     break;
+                
                 case 3:
                     Deposite();
                     break;
-                    
+                
+                case 4:
+                    Withdraw();
+                    break;
             }
         }
         
@@ -253,13 +257,34 @@ class Program
         choosen1.Deposit(depositAmount);
         
         Console.WriteLine($"Account holder's name: {choosen1.HolderName}");
-        Console.WriteLine($"Updated balance: {choosen1.Balance}");
+        Console.WriteLine($"Balance: {choosen1.Balance}");
     }
     
     
-    //---------------------------- case 3 ---------------------------
-    
-    
+    //---------------------------- case 4 ---------------------------
+
+    static void Withdraw()
+    {
+        BankAccount choosen1 = ChoosenAccount();
+        Console.WriteLine("Enter an amount: ");
+        double withdrawalAmount;
+
+        try
+        { 
+            withdrawalAmount = double.Parse(Console.ReadLine());
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+        
+        choosen1.Withdraw(withdrawalAmount);
+        
+        Console.WriteLine($"Balance:  {choosen1.Balance}");
+        
+        
+    }
     static Product ChoosenProduct()
     {
         Console.WriteLine("Choose a product:  (1/2)"); 
