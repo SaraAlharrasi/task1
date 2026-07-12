@@ -205,9 +205,10 @@ class Program
                     StudentReportCard();
                     break;
                 case 12:
-                    AccountHealthStatus()
+                    AccountHealthStatus();
                     break;
                 case 13:
+                    BulkSaleWithRevenue();
                     break;
                 case 14:
                     break;
@@ -527,4 +528,27 @@ class Program
     }
     
     //---------------------------- case 13 ---------------------------
+
+    static void BulkSaleWithRevenue()
+    {
+        Product choosen3 = ChoosenProduct();
+        
+        Console.WriteLine("Enter a quantity to sell: ");
+        int quantity = int.Parse(Console.ReadLine());
+
+        if (choosen3.StockQuantity >= quantity)
+        {
+            choosen3.Sell(quantity);
+            double revenue = choosen3.Price * quantity;
+            
+            Console.WriteLine($"Total revenue: {revenue}");
+        }
+        else
+        {
+            int quantityNeeded = quantity - choosen3.StockQuantity;
+            Console.WriteLine($"Additional units needed to fulfill the order : {quantityNeeded}");
+        }
+    }
+    
+    
 }
