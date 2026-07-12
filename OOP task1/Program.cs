@@ -197,6 +197,7 @@ class Program
                     TransferBetweenAccounts();
                     break;
                 case 10:
+                    UpdateStudentGrade();
                     break;
                 case 11:
                     break;
@@ -444,6 +445,36 @@ class Program
     }
     
     
+    //---------------------------- case 10 ---------------------------
+
+    static void UpdateStudentGrade()
+    {
+        Student choosen2 = ChoosenStudent();
+        int grade;
+        
+        Console.WriteLine("Enter new grade: ");
+        try
+        {
+            grade = int.Parse(Console.ReadLine());
+            if (grade < 0 || grade > 100)
+            {
+                Console.WriteLine("grade must be between 0 and 100");
+            }
+            else
+            {
+                choosen2.Grade = grade;
+                Console.WriteLine($"Grade: {choosen2.Grade}");
+            }
+        }
+        catch(FormatException)
+        {
+            Console.WriteLine("Invalid input");
+        }
+
+        
+        
+        
+    }
     
     
 }
