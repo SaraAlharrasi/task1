@@ -64,7 +64,20 @@ public class Student
     public string Address { get; set; }
     private string Email { get; set; } 
     int Age { get; set; }
+    
+    //---------------------------- case 17 ---------------------------
+    
+    static int studentCount;
 
+    public Student()
+    {
+        studentCount++;
+    }
+    
+    public static int GetStudentCount()
+    {
+        return studentCount;
+    }
 
 
     public void Register(string email)
@@ -230,6 +243,7 @@ class Program
                     QuickAccountOpening();
                     break;
                 case 17:
+                    StudentCounter();
                     break;
                 case 18:
                     break;
@@ -656,6 +670,25 @@ class Program
     
     
     //---------------------------- case 17 ---------------------------
+
+    static void StudentCounter()
+    {
+        Console.WriteLine($"Student count: {Student.GetStudentCount()}");
+    }
+    
+    
+    //---------------------------- case 18 ---------------------------
+    
+    
+    
+    
+    
+    
+    //---------------------------- case 19 ---------------------------
+    
+    
+    
+    
     
     
     
