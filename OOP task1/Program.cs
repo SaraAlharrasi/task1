@@ -17,6 +17,17 @@ public class BankAccount
         holderName = HolderName;
         balance = Balance;
     }
+    
+    //---------------------------- case 18 ---------------------------
+
+    public bool IsOverdrawn
+    {
+        get
+        {
+            return Balance < 0;
+        }
+    }
+    
 
    public void Deposit (double amount)
     {
@@ -79,6 +90,16 @@ public class Student
         return studentCount;
     }
 
+    //---------------------------- case 19 ---------------------------
+
+    private int securityPIN;
+    public int SecurityPIN
+    {
+        set
+        {
+            securityPIN = value;
+        }
+    }
 
     public void Register(string email)
     {
@@ -246,8 +267,10 @@ class Program
                     StudentCounter();
                     break;
                 case 18:
+                    OverDrawnAccount();
                     break;
                 case 19:
+                    setPIN();
                     break;
                 case 20:
                     Console.WriteLine("Have a nice day :)!");
@@ -678,16 +701,56 @@ class Program
     
     
     //---------------------------- case 18 ---------------------------
-    
-    
-    
+
+    static void OverDrawnAccount()
+    {
+        BankAccount choosen1 = ChoosenAccount();
+
+        if (choosen1.IsOverdrawn == true)
+        {
+            Console.WriteLine("your account is Overdrawn");
+        }
+        else
+        {
+            Console.WriteLine("your account is not Overdrawn");
+        }
+
+
+    }
     
     
     
     //---------------------------- case 19 ---------------------------
-    
-    
-    
+
+
+    static void setPIN()
+    {
+        Student choosen2 = ChoosenStudent();
+        
+        Console.WriteLine("Enter a 4 digit PIN number: ");
+        int pin;
+        try
+        {
+            pin = int.Parse(Console.ReadLine());
+        
+            
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+        if (pin < 1000 || pin > 9999)
+        {
+            Console.WriteLine("PIN must be 4 digits");
+            return;
+        }
+        
+        choosen2.SecurityPIN = pin;
+        Console.WriteLine("PIN was set!");
+        
+        
+    }
     
     
     
