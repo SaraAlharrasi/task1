@@ -8,6 +8,15 @@ public class BankAccount
     public int AccountNumber { get; set; }
     public string HolderName { get; set; }
     public double Balance { get; set; }
+    
+    //---------------------------- case 16 ---------------------------
+
+    public BankAccount( int accountNumber, string holderName, double balance)
+    {
+        accountNumber = AccountNumber;
+        holderName = HolderName;
+        balance = Balance;
+    }
 
    public void Deposit (double amount)
     {
@@ -218,6 +227,7 @@ class Program
                     BalanceTopUp();
                     break;
                 case 16:
+                    QuickAccountOpening();
                     break;
                 case 17:
                     break;
@@ -413,6 +423,7 @@ class Program
         catch (FormatException)
         {
             Console.WriteLine("Invalid input");
+            return;
         }
 
         if (choosen3.StockQuantity < 10)
@@ -437,9 +448,20 @@ class Program
         BankAccount SourceAccount = ChoosenAccount();
         BankAccount DestinationAccount = ChoosenAccount();
 
-        Console.WriteLine("Enter the amount to transfer: ");
-        double amount = double.Parse(Console.ReadLine());
+        double amount; 
 
+        Console.WriteLine("Enter the amount to transfer: ");
+
+        try
+        {
+            amount = double.Parse(Console.ReadLine());
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
+        
         if (SourceAccount.Balance >= amount)
         {
             SourceAccount.Withdraw(amount);
@@ -535,10 +557,19 @@ class Program
     static void BulkSaleWithRevenue()
     {
         Product choosen3 = ChoosenProduct();
+        int quantity;
         
         Console.WriteLine("Enter a quantity to sell: ");
-        int quantity = int.Parse(Console.ReadLine());
 
+        try
+        {
+            quantity = int.Parse(Console.ReadLine());
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input");
+            return;
+        }
         if (choosen3.StockQuantity >= quantity)
         {
             choosen3.Sell(quantity);
@@ -601,4 +632,32 @@ class Program
             Console.WriteLine("No top up needed");
         }
     }
+    
+    
+    
+    //---------------------------- case 16 ---------------------------
+
+    static void QuickAccountOpening()
+    {
+        Console.WriteLine("Enter account number: ");
+        int accountNumber = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Enter account holder name: ");
+        string holderName = Console.ReadLine();
+        
+        Console.WriteLine("Enter account starting balance: ");
+        double balance = double.Parse(Console.ReadLine());
+        
+        BankAccount account3 = new BankAccount(accountNumber, holderName, balance);
+        Console.WriteLine($"New account created! Account Number : {accountNumber} ,  Holder Name : {holderName} , Balance : {balance}");
+        
+        
+    }
+    
+    
+    //---------------------------- case 17 ---------------------------
+    
+    
+    
+    
 }
